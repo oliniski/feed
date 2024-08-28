@@ -31,7 +31,7 @@ export function Post() {
       <form className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea 
-          placeHolder="Deixe um comentário..."
+          placeholder="Deixe um comentário..."
         />
 
         <footer>

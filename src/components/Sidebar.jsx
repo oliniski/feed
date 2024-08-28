@@ -24,7 +24,8 @@ export function Sidebar() {
             size={20}
             className={styles.pencilIcon} 
           />
-          Editar Perfil</a>
+          Editar Perfil
+        </a>
       </footer>
     </aside>
   )
