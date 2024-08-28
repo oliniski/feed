@@ -5,6 +5,37 @@ import { Sidebar } from "./components/Sidebar"
 import styles from "./App.module.css"
 import "./global.css"
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      name: "Bruno Oliniski",
+      avatarUrl: "https://github.com/oliniski.png",
+      role: "Web Developer"
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeria ✌️'},
+      { type: 'paragraph', content: "Acabei de subir mais um projeto no meu porfolio. 🚀"},
+      { type: 'link', content: "https://github.com/oliniski"},
+    ],
+    publishedAt: new Date('2024-08-28 13:00:00')
+  },
+  {
+    id: 2,
+    author: {
+      name: "Bruno Bihuna",
+      avatarUrl: "https://github.com/oliniski.png",
+      role: "Fullstack Developer"
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galera ✌️'},
+      { type: 'paragraph', content: "Acabei de subir mais um projeto no meu porfolio. 🚀"},
+      { type: 'link', content: 'https://github.com/oliniski'},
+    ],
+    publishedAt: new Date('2024-08-10 13:00:00'),
+  },
+];
+
 export function App() {
   return (
     <>
@@ -14,14 +45,16 @@ export function App() {
       <Sidebar />
 
       <main>
-        <Post 
-          author="Bruno Oliniski" 
-          content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem corporis vero, repellat labore animi in dolore odit ipsam sit, doloremque similique totam eaque earum eos? Minus, recusandae natus. Nihil, impedit!"
-        />
-        <Post 
-          author="Bruno Bihuna" 
-          content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem corporis vero, repellat labore animi in dolore odit ipsam sit, doloremque similique totam eaque earum eos? Minus, recusandae natus. Nihil, impedit!"
-        />
+        {posts.map(post => {
+          return (
+            <Post 
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
+            />
+          ) 
+        })}
+        
       </main>
     </div>
     </>
